@@ -23,3 +23,5 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin')->middleware('admin');
 
+
+

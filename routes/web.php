@@ -26,6 +26,7 @@ Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin'
 //Route::resource('categories', 'App\Http\Controllers\CategoryController');
 Route::resource('applications', 'App\Http\Controllers\ApplicationController')->middleware('auth');
 Route::get('applications', 'App\Http\Controllers\ApplicationController@index')->name('all.application')->middleware('auth');
+Route::post('applications', 'App\Http\Controllers\ApplicationController@store')->name('application.store')->middleware('auth');
 
 
 

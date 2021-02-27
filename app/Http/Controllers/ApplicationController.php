@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use Illuminate\Http\Request;
+use function GuzzleHttp\Promise\all;
 
 class ApplicationController extends Controller
 {
@@ -35,7 +36,7 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-
+        dd($request->all());
     }
 
     /**

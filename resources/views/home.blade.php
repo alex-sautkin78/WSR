@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-header">{{ __('Добавить заявку') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -14,47 +14,38 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
+                        <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal"
+                                data-target="#modal_add_application">
+                            Добавить заявку
+                        </button>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Метка</th>
+                                <th scope="col">Название</th>
+                                <th scope="col">Описание</th>
+                                <th scope="col">Категория</th>
+                                <th scope="col">Статус</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <form action="#" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label for="name">Введите название</label>
-                            <input type="text" name="name" id="name" placeholder="Введите название"
-                                   class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Введите описание</label>
-                            <input type="text" name="description" id="description" placeholder="Введите описание"
-                                   class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="category_id">Выберите категорию</label>
-                            <select class="form-control" id="category_id" name="category_id" required>
-                                @foreach($data as $el)
-                                <option>{{ $el->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="path">Фото</label>
-                            <input type="file" name="path" id="path" multiple>
-                        </div>
-                        <div class="form-group">
-                            <label for="status_id">Метка заявки</label>
-                            <input type="text" name="status_id" id="status_id" placeholder="Введите метку заявки"
-                                   class="form-control" required>
-                        </div>
-                        <input type="submit" value="Отправить" class="btn btn-danger">
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
+    @include('modal.add_application')
 @endsection

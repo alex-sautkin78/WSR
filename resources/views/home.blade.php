@@ -37,10 +37,9 @@
                         <div class="form-group">
                             <label for="category_id">Выберите категорию</label>
                             <select class="form-control" id="category_id" name="category_id" required>
-                                <option>Выберите категорию</option>
-                                <option value="Заявка на ремонт">Заявка на ремонт</option>
-                                <option value="Заявка на осмотр">Заявка на осмотр</option>
-                                <option value="Заявка на постройку дороги">Заявка на постройку дороги</option>
+                                @foreach($data as $el)
+                                <option>{{ $el->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">

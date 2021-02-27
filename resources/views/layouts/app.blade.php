@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
     <div id="app">
@@ -60,7 +61,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Выйти') }}
                                     </a>
-                                    <a class="dropdown-item" href="#">Мои заявки</a>
+                                    <a class="dropdown-item" href="{{ route('all.application') }}">Мои заявки</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

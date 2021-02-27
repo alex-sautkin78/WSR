@@ -20,9 +20,10 @@
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong id="mes">{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                <span id="mes_fio"></span>
                             </div>
                         </div>
 
@@ -37,6 +38,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                <span id="mes_log"></span>
                             </div>
                         </div>
 
@@ -51,6 +53,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                <span id="mes"></span>
                             </div>
                         </div>
 
@@ -73,6 +76,7 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <span id="pas_val"></span>
                             </div>
                         </div>
 
@@ -80,7 +84,7 @@
                             <label for="consent" class="col-md-4 col-form-label text-md-right">{{ __('Согласие на обработку') }}</label>
 
                             <div class="col-md-6">
-                                <input id="consent" type="checkbox" class="form-control @error('consent') is-invalid @enderror" name="consent" required autocomplete="consent">
+                                <input id="consent" type="checkbox" class="form-control @error('consent') is-invalid @enderror" name="consent" required autocomplete="consent" checked>
 
                                 @error('consent')
                                 <span class="invalid-feedback" role="alert">
@@ -94,7 +98,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick="valid()">
                                     {{ __('Зарегестрироваться') }}
                                 </button>
                             </div>

@@ -20,6 +20,7 @@ class CreateApplicationsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('status_id');
             $table->string('path',200);
+            $table->string('mark');
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');

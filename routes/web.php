@@ -23,5 +23,14 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin')->middleware('admin');
 
+//Route::resource('categories', 'App\Http\Controllers\CategoryController');
+Route::resource('applications', 'App\Http\Controllers\ApplicationController')->middleware('auth');
+
+
+Route::get('/categories', 'App\Http\Controllers\CategoryController@index')->name('category.list')->middleware('admin');
+Route::post('/categories', 'App\Http\Controllers\CategoryController@store')->name('category.store')->middleware('admin');
+Route::delete('/categories/{id}', 'App\Http\Controllers\CategoryController@destroy')->name('category.delete')->middleware('admin');
+Route::get('/categories/form', 'App\Http\Controllers\CategoryController@form')->name('category.page')->middleware('admin');
+
 
 

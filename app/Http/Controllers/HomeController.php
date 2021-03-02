@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['data' => Category::all()]);
+        return view('home', ['data' => Category::all(), 'application' => Application::all()]);
     }
 }

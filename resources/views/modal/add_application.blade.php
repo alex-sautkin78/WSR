@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('application.store') }}" method="post" id="add_application">
+                <form action="{{ route('application.store') }}" method="post" id="add_application" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="name">Введите название</label>
@@ -24,7 +24,7 @@
                         <label for="category_id">Выберите категорию</label>
                         <select class="form-control" id="category_id" name="category_id" required>
                             @foreach($data as $el)
-                                <option>{{ $el->name }}</option>
+                                <option value="{{ $el->id }}">{{ $el->name }}</option>
                             @endforeach
                         </select>
                     </div>

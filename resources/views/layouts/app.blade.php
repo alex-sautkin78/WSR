@@ -61,7 +61,6 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Выйти') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('all.application') }}">Мои заявки</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

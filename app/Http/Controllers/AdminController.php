@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\Status;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -27,6 +28,6 @@ class AdminController extends Controller
         return view('admin.index', ['data' => Application::all()]);
     }
     public function all($id){
-        return view('all', ['data' => Application::find($id)]);
+        return view('all', ['data' => Application::find($id), 'st'=>Status::all()]);
     }
 }

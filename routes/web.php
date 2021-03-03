@@ -23,6 +23,7 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin')->middleware('admin');
 Route::get('/admin{id}', 'App\Http\Controllers\AdminController@all')->name('admin.all')->middleware('admin');
+Route::patch('/admin{id}/update', 'App\Http\Controllers\ApplicationController@update')->name('admin.update')->middleware('admin');
 
 //Route::resource('categories', 'App\Http\Controllers\CategoryController');
 Route::resource('applications', 'App\Http\Controllers\ApplicationController')->middleware('auth');

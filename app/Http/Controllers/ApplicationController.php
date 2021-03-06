@@ -81,8 +81,8 @@ class ApplicationController extends Controller
     public function edit($id)
     {
         //
-    }
 
+    }
     /**
      * Update the specified resource in storage.
      *

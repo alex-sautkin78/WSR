@@ -33,12 +33,13 @@
                                     </a>
                                 </td>
                                 <td scope="col">{{ \App\Models\Status::find($data->status_id)->name }}</td>
+                                <td scope="col">
+                                    <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal"
+                                            data-target="#modal_update_status">
+                                        Изменить
+                                    </button>
+                                </td>
                             </tr>
-                            <td scope="col">
-                                <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modal_update_status">
-                                    Изменить
-                                </button>
-                            </td>
                             </tbody>
                         </table>
                     </div>

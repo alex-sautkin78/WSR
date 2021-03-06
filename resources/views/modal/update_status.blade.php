@@ -14,7 +14,7 @@
                     <div class="form-group row">
                         <label for="name" class="col col-form-label text-md-right">Наименование</label>
                         <div class="col-md">
-                            <select name="status">
+                            <select name="status" class="form-control">
                                 @foreach($st as $el)
                                     <option value="{{$el->id}}">{{$el->name}}</option>
                                 @endforeach

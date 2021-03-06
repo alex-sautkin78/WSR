@@ -107,8 +107,11 @@ class ApplicationController extends Controller
     public function destroy($id)
     {
         $application = Application::find($id);
+        $name_appl = Status::find($application->status_id)->name;
         if (auth()->user()->id == $application->user_id) {
-            $application->delete();
+            if ($name_appl == 'Новая') {
+                $application->delete();
+            }
         }
         return redirect()->route('home');
     }

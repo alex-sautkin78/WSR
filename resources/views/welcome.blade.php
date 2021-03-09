@@ -14,6 +14,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="public/js/jquery-3.5.1.min.js"></script>
+    <script src="public/js/script2.js"></script>
     <!-- Styles -->
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -346,7 +348,7 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body onload="mode()" class="antialiased">
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 mt-8 sm:pt-0">
     @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -365,6 +367,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
+                    <div class="card-header">Последние выполненные задачи</div>
 
                     <div class="card-body">
                         <table class="table table-striped">
@@ -403,6 +406,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div style="height: 30px; float: right; margin:0px 20px; position: absolute; bottom: 0; right: 0;" id="otvet">
+
     </div>
 </div>
 </body>

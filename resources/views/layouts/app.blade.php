@@ -14,6 +14,7 @@
     <script src="public/js/jquery-3.5.1.min.js"></script>
     <script src="public/js/script.js"></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

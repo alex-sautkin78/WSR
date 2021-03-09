@@ -61,7 +61,7 @@
                                         <td scope="col">{{ \App\Models\Status::find($item->status_id)->name }}</td>
                                         <td scope="col">
                                             <form action="{{ route('application.delete', ['id'=>$item->id]) }}"
-                                                  method="post" id="del">
+                                                  method="post" class="del">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-outline-danger">Удалить</button>

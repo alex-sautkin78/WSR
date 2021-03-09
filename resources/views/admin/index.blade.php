@@ -13,6 +13,9 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        <a href="{{ route('category.list') }}"
+                           class="btn btn-primary float-right mb-3">Категории
+                        </a>
 
                         <table class="table table-striped">
                             @if(count($data) > 0)
@@ -27,7 +30,8 @@
                                 <tbody>
                                 @foreach($data as $el)
                                     <tr>
-                                        <td scope="col"><a href="{{ route('admin.all', ['id'=>$el->id]) }}">{{ $el->id }}</a></td>
+                                        <td scope="col"><a
+                                                href="{{ route('admin.all', ['id'=>$el->id]) }}">{{ $el->id }}</a></td>
                                         <td scope="col">{{ $el->created_at }}</td>
                                         <td scope="col">{{ $el->name }}</td>
                                         <td scope="col">{{ \App\Models\Status::find($el->status_id)->name }}</td>

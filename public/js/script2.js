@@ -1,6 +1,6 @@
 function mode(){
     $.ajax({
-        url:'http://localhost/api',
+        url:'../api',
         method: 'GET',
         success: function (data){
             console.log(data);

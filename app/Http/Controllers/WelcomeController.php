@@ -17,10 +17,13 @@ class WelcomeController extends Controller
 
     public function otvet()
     {
+        $st = Status::where('name', 'Решена')->first()->id;
+        $appl_count = Application::where('status_id', $st)->count();
         $user = User::all();
         $user_count = $user->count();
         return response()->json([
             'data' => $user_count,
+            'appl_count' => $appl_count,
         ]);
     }
 

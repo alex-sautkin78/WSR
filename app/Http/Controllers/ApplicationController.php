@@ -93,6 +93,8 @@ class ApplicationController extends Controller
     public function update(Request $request, $id)
     {
         $ap = Application::find($id);
+        $ap->path2 = $request->input('path2');
+        $ap->prichina = $request->input('prichina');
         $ap->status_id = $request->input('status');
         $ap->save();
         return redirect()->route('admin');

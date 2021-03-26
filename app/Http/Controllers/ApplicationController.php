@@ -83,6 +83,7 @@ class ApplicationController extends Controller
         //
 
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -92,8 +93,12 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $file = $request->file('path2');
+        $upload = 'public/images_ready';
+        $file_name = $file->getClientOriginalName();
+        Storage::putFileAs($upload, $file, $file_name);
         $ap = Application::find($id);
-        $ap->path2 = $request->input('path2');
+        $ap->path2 = url('public/storage/images_ready/' . $file_name);
         $ap->prichina = $request->input('prichina');
         $ap->status_id = $request->input('status');
         $ap->save();

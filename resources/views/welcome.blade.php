@@ -67,7 +67,7 @@
                 @if(\App\Models\Status::find($el->status_id)->name == 'Решена')
                     <div class="col-sm-6 col-md-3">
                         <div class="thumbnail">
-                            <img src="{{ $el->path }}" alt="{{ $el->name }}">
+                            <img src="{{ $el->path2 }}" alt="{{ $el->name }}">
                             <div class="info">{{ $el->created_at }}</div>
                             <div class="info"> {{ $el->name }}</div>
                             <div class="info"> {{ $el->description }}</div>
